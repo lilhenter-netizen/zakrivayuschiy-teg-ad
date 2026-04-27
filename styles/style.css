@@ -197,13 +197,13 @@
   min-height: 75px;
   padding: 12px 24px;
   font-family: var(--accent-font);
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
   cursor: pointer;
   position: relative;
   overflow: hidden;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -337,6 +337,14 @@
 }
 
 @media (width <= 375px) {
+  .header__logo {
+    --logo-font-size: clamp(3rem, 6.5vw, 6rem);
+    gap: 20px;
+  }
+
+  .header__title {
+    --title-font-size: clamp(1.125rem, 4vw, 2rem);
+  }
   .cards {
     width: 100%;
     padding: 0 10px;
@@ -347,11 +355,24 @@
   }
   .card__footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 10px;
   }
   .card__like-group {
-    width: 100%;
-    justify-content: space-between;
+    padding: 0;
+  }
+  .card__like-button {
+    min-width: 5vw;
+  }
+  .save-memory-button {
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    gap: 10px;
+    padding: 16px 16px;
+  }
+  .save-memory-button .button__icon {
+    width: 28px;
+    height: 28px;
   }
 }
